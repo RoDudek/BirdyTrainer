@@ -1,0 +1,25 @@
+<h1>Listing birdy_voices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Voice</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @birdy_voices.each do |birdy_voice| %>
+  <tr>
+    <td><%= birdy_voice.name %></td>
+    <td><%= render "birdy_player", :mp3file => birdy_voice.voice %></td>
+    <td><%= link_to 'Show', birdy_voice %></td>
+    <td><%= link_to 'Edit', edit_birdy_voice_path(birdy_voice) %></td>
+    <td><%= link_to 'Destroy', birdy_voice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Birdy voice', new_birdy_voice_path %>

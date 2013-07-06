@@ -1,4 +1,7 @@
 Birdytrainer::Application.routes.draw do
+  resources :birdy_voices
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

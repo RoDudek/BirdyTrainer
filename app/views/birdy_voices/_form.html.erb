@@ -1,0 +1,25 @@
+<%= form_for(@birdy_voice, :html => {:multipart => true}) do |f| %>
+  <% if @birdy_voice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@birdy_voice.errors.count, "error") %> prohibited this birdy_voice from being saved:</h2>
+
+      <ul>
+      <% @birdy_voice.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :voice %><br />
+    <%= f.file_field :voice %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

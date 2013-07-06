@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @birdy_voice.name %>
+</p>
+
+<p>
+  <b>Voice:</b>
+ <%= render "birdy_player", :mp3file => @birdy_voice.voice %>
+ </p>
+
+
+<%= link_to 'Edit', edit_birdy_voice_path(@birdy_voice) %> |
+<%= link_to 'Back', birdy_voices_path %>
