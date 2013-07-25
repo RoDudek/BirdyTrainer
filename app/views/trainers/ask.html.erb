@@ -1,0 +1,9 @@
+<h2>Welche Vogelstimme ist das?</h2>
+<%= render "birdy_voices/birdy_player", :mp3file => @birdyvoice.voice %>
+
+<%= form_tag(check_trainer_path) do %>
+<%= text_field_tag 'birdname' %>
+<%= text_field_tag 'id',@birdyvoice.id, :hidden =>true %>
+<%= submit_tag 'prüfen' %>
+
+<% end %>
